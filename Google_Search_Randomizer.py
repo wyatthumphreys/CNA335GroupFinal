@@ -4,7 +4,7 @@ app = Flask(__name__, static_url_path='')
 
 
 @app.route('/SelectedNumber', methods=['GET'])
-def SelectedNumber():
+def SelectedNumber():23
        user = request.args.get('szip')
        return redirect(url_for('searchzipcode', searchZIP=user))
 
