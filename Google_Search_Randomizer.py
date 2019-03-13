@@ -22,7 +22,7 @@ def usenumber(number):
             randolist.append(testvar)
             counter = counter - 1
     test = '+'.join(randolist)
-    return redirect("http://www.google.com/search?sourceid=navclient&btnI=1&q=%s" % (test), code=302)
+    return redirect("https://www.google.com/search?&btnI=1&q=%s" % (test), code=302)
 
 
 
