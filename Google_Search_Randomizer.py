@@ -3,14 +3,13 @@ import random
 
 app = Flask(__name__, static_url_path='')
 
-linelist=[]
-randolist=[]
-counter=4
-
 #http://www.google.com/search?q=variable&btnl
 
-@app.route('/usenumber', methods=['POST'])
-def usenumber(counter, linelist, randolist):
+@app.route('/usenumber/ <number>')
+def usenumber(number):
+    linelist = []
+    randolist = []
+    counter = int(number)
     with open('words.txt', 'rt') as wordfile:
         for line in wordfile:
             linelist.append(line)
@@ -18,13 +17,14 @@ def usenumber(counter, linelist, randolist):
             testvar = random.choice(linelist)
             randolist.append(testvar)
             counter = counter - 1
-            print(randolist)
-            
+            test = randolist[0]
+            return test
 
-@app.route('/SelectedNumber', methods=['GET'])
+
+@app.route('/SelectedNumber', methods=['POST'])
 def SelectedNumber():
-       user = request.args.get('szip')
-       return redirect(url_for('searchzipcode', searchZIP=user))
+      value = request.form['selnum']
+      return redirect(url_for('usenumber', number=value))
 
 
 #root of web server and gots to template (login.html)
