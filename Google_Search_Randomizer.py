@@ -4,12 +4,12 @@ app = Flask(__name__, static_url_path='')
 
 
 @app.route('/SelectedNumber', methods=['GET'])
-def SelectedNumber():
+def SelectedNumber():22
        user = request.args.get('szip')
        return redirect(url_for('searchzipcode', searchZIP=user))
 
 
-#root of web server and gots to template (login.html)
+#root of web server and gots to template (index.html)
 @app.route('/')
 def root():
    return render_template('index.html')
