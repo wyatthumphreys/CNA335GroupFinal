@@ -2,9 +2,9 @@ from flask import Flask, redirect, url_for, request, render_template
 
 app = Flask(__name__, static_url_path='')
 
-
+print("test")
 @app.route('/SelectedNumber', methods=['GET'])
-def SelectedNumber():23
+def SelectedNumber():
        user = request.args.get('szip')
        return redirect(url_for('searchzipcode', searchZIP=user))
 
