@@ -1,4 +1,5 @@
 #sources: https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask
+#https://github.com/dwyl/english-words
 #https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
 #https://productforums.google.com/forum/#!topic/websearch/pywUIBP6C20
 from flask import Flask, redirect, url_for, request, render_template
