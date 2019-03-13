@@ -1,3 +1,6 @@
+#sources: https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask
+#https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
+#https://productforums.google.com/forum/#!topic/websearch/pywUIBP6C20
 from flask import Flask, redirect, url_for, request, render_template
 import random
 
@@ -14,11 +17,12 @@ def usenumber(number):
         for line in wordfile:
             linelist.append(line)
         while counter != 0:
-            testvar = random.choice(linelist)
+            testvar = random.choice(linelist).rstrip()
             randolist.append(testvar)
             counter = counter - 1
-            test = randolist[0]
-            return test
+    test = '+'.join(randolist)
+    return redirect("http://www.google.com/search?sourceid=navclient&btnI=1&q=%s" % (test), code=302)
+
 
 
 @app.route('/SelectedNumber', methods=['POST'])
