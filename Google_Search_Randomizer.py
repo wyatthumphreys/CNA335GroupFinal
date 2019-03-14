@@ -31,7 +31,10 @@ def usenumber(number):
 @app.route('/SelectedNumber', methods=['POST'])
 def SelectedNumber():
       value = request.form['selnum']
-      return redirect(url_for('usenumber', number=value))
+      if int(value) > 5:
+          return "This value is larger than 5!"
+      else:
+        return redirect(url_for('usenumber', number=value))
 
 
 #root of web server and gots to template (login.html)
