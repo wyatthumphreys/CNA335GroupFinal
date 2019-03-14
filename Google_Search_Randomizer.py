@@ -2,6 +2,8 @@
 #https://github.com/dwyl/english-words
 #https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
 #https://productforums.google.com/forum/#!topic/websearch/pywUIBP6C20
+#https://www.w3schools.com/tags/att_body_background.asp
+#https://www.w3schools.com/tags/att_font_color.asp
 from flask import Flask, redirect, url_for, request, render_template
 import random
 
