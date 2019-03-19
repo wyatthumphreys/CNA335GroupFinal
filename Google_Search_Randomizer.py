@@ -28,7 +28,7 @@ app = Flask(__name__, static_url_path='')
 #http://www.google.com/search?q=variable&btnl
 
 
-
+#gets user input from index.html and puts into "value" variable, redirects to "FirstPage" with variable "value"
 @app.route('/SelectedNumber', methods=['POST'])
 def SelectedNumber():
      value = request.form['selnum']
@@ -37,19 +37,20 @@ def SelectedNumber():
      else:
        return redirect(url_for('FirstPage', value=value))
 
-
+#loads loader.html with variable "value"
 @app.route('/FirstPage/<value>')
 def FirstPage(value):
    return render_template('loader.html', value=value)
 
 
-
+#is redirected to by loader.html and redirects to "usenumber" with variable "value"
 @app.route('/load/<value>')
 def load(value):
    value = int(value)
    return redirect(url_for('usenumber', value=value))
 
-
+#takes variable "value" and searches word.txt a the number of words (represented by "value")
+#puts words into list and then puts words from list into google link with I'm Feeling Lucky filter
 @app.route('/usenumber/<value>')
 def usenumber(value):
    time.sleep(3)
@@ -68,7 +69,7 @@ def usenumber(value):
 
 
 
-#root of web server and gots to template (login.html)
+#root of web server and gots to template (index.html)
 @app.route('/')
 def root():
   return render_template('index.html')
