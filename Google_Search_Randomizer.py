@@ -23,7 +23,7 @@ def SelectedNumber():
 
 @app.route('/FirstPage/<value>')
 def FirstPage(value):
-   return render_template('test.html', value=value)
+   return render_template('loader.html', value=value)
 
 
 
