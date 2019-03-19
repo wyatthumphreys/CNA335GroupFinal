@@ -1,7 +1,24 @@
+#Webpage that asks for user's input (a number between 1-5), and brings up a loading page. The redirects the user to the random webpage based on a set of random words that were picked.
+#CNA 335, Winter 2019
+#Ian Hardgrave, Wyatt Humphreys
+
+
 #sources: https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask
 #https://github.com/dwyl/english-words
 #https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
 #https://productforums.google.com/forum/#!topic/websearch/pywUIBP6C20
+#https://www.youtube.com/watch?v=1PipslRY0bc
+#https://stackoverflow.com/questions/44962932/how-to-use-rowcount-in-mysql-using-python
+#http://stackoverflow.max-everyday.com/2017/09/python-mysql-connector-internalerror-unread-result-found/
+#https://stackoverflow.com/questions/1082580/how-to-build-jars-from-intellij-properly
+#https://stackoverflow.com/questions/4871051/getting-the-current-working-directory-in-java
+#https://stackoverflow.com/questions/235855/how-do-i-stretch-a-background-image-to-cover-the-entire-html-element
+#http://bouncejs.com
+#https://css-tricks.com/redirect-web-page/
+#https://www.geeksforgeeks.org/global-local-variables-python/
+#https://www.youtube.com/watch?v=Li9k7zhUPhA
+
+
 from flask import Flask, redirect, url_for, request, render_template
 import random
 import time
